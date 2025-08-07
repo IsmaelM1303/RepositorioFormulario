@@ -1,3 +1,5 @@
+import { almacenarProducto } from "./almacenamientoYLogica.js";
+
 const formulario = document.getElementById('miFormulario');
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -18,10 +20,14 @@ document.addEventListener('DOMContentLoaded', function () {
         ) {
             alert("Por favor, completa todos los campos correctamente.");
             valido = false;
-        }
+        } else 
 
         if (!valido) {
             event.preventDefault();
+        }
+
+        if (valido ==true){
+            almacenarProducto()
         }
     });
 });
