@@ -12,15 +12,15 @@
   <form method="get" id="miFormulario">
     <!-- Nombre del producto -->
     <label for="NombreP" id="nombre" class="Label">Nombre del Producto</label>
-    <input type="text" id="textoI" name="inputT" class="Input" required>
+    <input type="text" id="nombreProducto" name="NombreP" class="Input"  required >
 
     <!-- Precio -->
     <label for="PrecioL" id="precio" class="Label">Precio</label>
-    <input type="number" id="precio" name="precio" class="Input" min="0.01" step="0.01" required>
+    <input type="number" id="precioProducto" name="PrecioL" class="Input" min="0.01" step="0.01" required>
 
     <!-- Categoría -->
     <label for="CategoríaL" id="categoria" class="Label">Categoría</label>
-    <select name="Categoria" id="categoria" class="Select" required>
+    <select name="CategoríaL" id="categoriaProducto" class="Select" required>
       <option value="" class="Option">Seleccione una Categoria</option>
       <option value="electronica" class="Option">Electrónica</option>
       <option value="ropa" class="Option">Ropa</option>
@@ -33,16 +33,16 @@
 
     <!-- Descripción -->
     <label for="Descripción" id="descripcion" class="Label">Descripción</label>
-    <textarea name="descripcion" id="descripcion" class="Textarea" rows="4" cols="50" required></textarea>
+    <textarea name="Descripción" id="descripcionProducto" class="Textarea" rows="4" cols="50" required></textarea>
 
     <!-- Cantidad disponible -->
     <label for="cantidad" id="cantidad" class="Label">Cantidad Disponible</label>
-    <input type="number" id="cantidad" class="Input" name="cantidad" min="0" step="1" required>
+    <input type="number" id="cantidadProducto" class="Input" name="cantidad" min="0" step="1" required>
 
     <!-- Botón de envío -->
-    <button type="submit" class="button">Guardar Productos</button>
+    <button type="submit" class="button" id="botonEnviar">Guardar Productos</button>
 
-    <script src="validaciones.js"></script>
+    <script src="validaciones.js" type="module"></script>
   </form>
 </body>
 

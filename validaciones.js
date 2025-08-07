@@ -1,15 +1,25 @@
 import { almacenarProducto } from "./almacenamientoYLogica.js";
+let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
 
-const formulario = document.getElementById('miFormulario');
+const nombreProducto = document.getElementById("nombreProducto")
+const precioProducto = document.getElementById("precioProducto")
+const categoriaProducto = document.getElementById("categoriaProducto")
+const descripcionProducto = document.getElementById("descripcionProducto")
+const cantidadProducto = document.getElementById("cantidadProducto")
+
+
+const botonEnviar = document.getElementById('botonEnviar');
+const formulario = document.getElementById("formulario")
 
 document.addEventListener('DOMContentLoaded', function () {
-    formulario.addEventListener('submit', function (event) {
-        let valido = true;
-        const nombre = formulario.nombre.value;
-        const precio = formulario.precio.value;
-        const categoria = formulario.categoria.value;
-        const descripcion = formulario.descripcion.value;
-        const cantidadDisponible = formulario.cantidadDisponible.value;
+    let valido = true;
+    botonEnviar.addEventListener("click", function (event) {
+        event.preventDefault();
+        const nombre = nombreProducto.value
+        const precio = precioProducto.value;
+        const categoria = categoriaProducto.value;
+        const descripcion = descripcionProducto.value;
+        const cantidadDisponible = cantidadProducto.value;
 
         if (
             nombre.trim() === '' ||
@@ -20,14 +30,18 @@ document.addEventListener('DOMContentLoaded', function () {
         ) {
             alert("Por favor, completa todos los campos correctamente.");
             valido = false;
-        } else 
+        } else
 
-        if (!valido) {
-            event.preventDefault();
-        }
+            if (!valido) {
+                event.preventDefault();
+            }
 
-        if (valido ==true){
-            almacenarProducto()
-        }
+        ingreso(valido)
     });
 });
+
+export function ingreso(valido) {
+    if (valido === true) {
+        almacenarProducto(nombreProducto, precioProducto, categoriaProducto, descripcionProducto, cantidadProducto)
+    }
+}
