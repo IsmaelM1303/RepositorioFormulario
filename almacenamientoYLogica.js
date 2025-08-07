@@ -3,21 +3,21 @@ let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
 
 //Estas variables se cambian por los inputs
 const nombre = document.getElementById("nombre");
-const precio = 1300
-const categoria = "limpieza"
-const descripcion = "Descripcion Objeto"
-const cantidad = 5
+const precio = document.getElementById("precio")
+const categoria = document.getElementById("categoria")
+const descripcion = document.getElementById("descripcion")
+const cantidad = document.getElementById("cantidad")
 const botonEnviar = document.getElementById("botonEnviar")
 
 botonEnviar.addEventListener("click", almacenarProducto)
 
 export function almacenarProducto() {
     let nuevoProducto = {
-        nombreProducto: nombre,
-        precioProducto: precio,
-        categoriaProducto: categoria,
-        descripcionProducto: descripcion,
-        cantidadProducto: cantidad
+        nombreProducto: nombre.value,
+        precioProducto: precio.value,
+        categoriaProducto: categoria.value,
+        descripcionProducto: descripcion.value,
+        cantidadProducto: cantidad.value
     }
     listaProductos.push(nuevoProducto);
     const listaProductosStr = JSON.stringify(listaProductos);
