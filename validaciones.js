@@ -34,6 +34,13 @@ document.addEventListener('DOMContentLoaded', function () {
             valido = false;
         }
 
+        
+        if (cantidadDisponible.trim() === "" || isNaN(cantidadDisponible) || Number(cantidadDisponible) < 0) {
+            alert("No hay una cantidad disponible");
+            valido = false;
+        }
+
+
         if (!valido) {
             event.preventDefault();
         }
