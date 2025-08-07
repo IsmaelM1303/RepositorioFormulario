@@ -9,26 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const descripcion = formulario.descripcion.value;
         const cantidadDisponible = formulario.cantidadDisponible.value;
 
-        if (nombre.trim() === '') {{{{{
-            alert("El nombre es obligatorio");
+        if (
+            nombre.trim() === '' ||
+            precio.trim() === "" || isNaN(precio) || Number(precio) <= 0 ||
+            categoria.trim() === "" ||
+            descripcion.trim() === "" ||
+            cantidadDisponible.trim() === "" || isNaN(cantidadDisponible) || Number(cantidadDisponible) < 0
+        ) {
+            alert("Por favor, completa todos los campos correctamente.");
             valido = false;
-         (precio.trim() === "" || isNaN(precio) || Number(precio) <= 0)
-            alert("El precio debe ser un número mayor a cero");
-            valido = false;
-         (categoria.trim() === "") 
-            alert("No hay categoria");
-            valido = false;
-         (descripcion.trim() === "") 
-            alert("No hay una descripcion");
-            valido = false; 
-         (precio.trim() === "" || isNaN(precio) || Number(precio) <= 0) 
-            alert("El precio debe ser un número mayor a cero");
-            valido = false; 
-          (cantidadDisponible.trim() === "" || isNaN(cantidadDisponible) || Number(cantidadDisponible) < 0)
-            alert("No hay una cantidad disponible");
-            valido = false;
-        }}}}}
-
+        }
 
         if (!valido) {
             event.preventDefault();
