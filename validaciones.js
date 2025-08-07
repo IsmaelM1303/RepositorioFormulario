@@ -9,36 +9,25 @@ document.addEventListener('DOMContentLoaded', function () {
         const descripcion = formulario.descripcion.value;
         const cantidadDisponible = formulario.cantidadDisponible.value;
 
-        if (nombre.trim() === '') {
+        if (nombre.trim() === '') {{{{{
             alert("El nombre es obligatorio");
             valido = false;
-        }
-
-        if (precio.trim() === "" || isNaN(precio) || Number(precio) <= 0) {
+         (precio.trim() === "" || isNaN(precio) || Number(precio) <= 0)
             alert("El precio debe ser un número mayor a cero");
             valido = false;
-        }
-
-        if (categoria.trim() === "") {
+         (categoria.trim() === "") 
             alert("No hay categoria");
             valido = false;
-        }
-
-        if (descripcion.trim() === "") {
+         (descripcion.trim() === "") 
             alert("No hay una descripcion");
-            valido = false;
-        }
-
-        if (precio.trim() === "" || isNaN(precio) || Number(precio) <= 0) {
+            valido = false; 
+         (precio.trim() === "" || isNaN(precio) || Number(precio) <= 0) 
             alert("El precio debe ser un número mayor a cero");
-            valido = false;
-        }
-
-        
-        if (cantidadDisponible.trim() === "" || isNaN(cantidadDisponible) || Number(cantidadDisponible) < 0) {
+            valido = false; 
+          (cantidadDisponible.trim() === "" || isNaN(cantidadDisponible) || Number(cantidadDisponible) < 0)
             alert("No hay una cantidad disponible");
             valido = false;
-        }
+        }}}}}
 
 
         if (!valido) {

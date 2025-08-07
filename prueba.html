@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <h1>Lista de Mercado</h1>
+<form method="post">
+   <!-- Nombre del producto -->
+<label for="NombreP" id="nombre" class="Label">Nombre del Producto</label>
+<input type="text" id="textoI" name="inputT" class="Input" required>
+
+  <!-- Precio -->
+<label for="PrecioL" id="precio" class="Label">Precio</label>
+<input type="number" id="precio" name="precio" class="Input" min="0.01" step="0.01" required>
+
+  <!-- Categoría -->
+<label for="CategoríaL" id="categoria" class="Label">Categoría</label>
+<select name="Categoria" id="categoria" class="Select" required>
+<option value="" class="Option">Seleccione una Categoria</option>
+<option value="electronica" class="Option">Electrónica</option>
+<option value="ropa" class="Option">Ropa</option>
+<option value="hogar" class="Option">Hogar</option>
+<option value="limpieza" class="Option">Limpieza</option>
+<option value="juguetes" class="Option">Juguetes</option>
+<option value="otros" class="Option">Otros</option>
+
+</select>
+
+  <!-- Descripción -->
+<label for="Descripción" id="descripcion" class="Label">Descripción</label>
+<textarea name="descripcion" id="descripcion" class="Textarea" rows="4" cols="50" required></textarea>
+
+  <!-- Cantidad disponible -->
+<label for="cantidad" id="cantidad" class="Label">Cantidad Disponible</label>
+<input type="number" id="cantidad" class="Input" name="cantidad" min="0" step="1" required>
+
+  <!-- Botón de envío -->
+   <button type="submit" class="button">Guardar Productos</button>
+</form>
+</body>
+</html>
